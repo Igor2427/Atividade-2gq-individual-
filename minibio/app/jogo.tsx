@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, Pressable, StyleSheet, ScrollView } from "react-native";
 import { Link } from "expo-router";
+import HangmanDrawing from "../components/HangmanDrawing";
 
 const LISTA_PALAVRAS = [
   "REACT", "JAVASCRIPT", "EXPO", "COMPONENTE", "HOOKS",
@@ -35,7 +36,7 @@ export default function JogoPage() {
       setLetrasCorretas([...letrasCorretas, letra]);
     } else {
       setLetrasErradas([...letrasErradas, letra]);
-      setTentativasRestantes((prev) => prev - 1);
+      setTentativasRestantes(prev => prev - 1);
     }
   }
 
@@ -49,6 +50,9 @@ export default function JogoPage() {
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>Jogo da Forca</Text>
       <Text style={styles.subtext}>Tentativas restantes: {tentativasRestantes}</Text>
+
+      {/* Boneco da forca */}
+      <HangmanDrawing mistakes={6 - tentativasRestantes} />
 
       {/* Letras e tracinhos */}
       <View style={styles.wordContainer}>
@@ -174,6 +178,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 18,
     marginBottom: 10,
+    textAlign: "center",
   },
   button: {
     backgroundColor: "#64ffda",
