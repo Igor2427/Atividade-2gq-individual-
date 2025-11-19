@@ -5,8 +5,7 @@ export default function ExperienciaProfissional() {
     <View style={styles.container}>
       <Text style={styles.titulo}>Experiência Profissional</Text>
 
-      <Text style={styles.item}>• Empresa X — Cargo Y</Text>
-      <Text style={styles.item}>• Empresa Z — Cargo W</Text>
+      <Text style={styles.item}>• Atividade de projeto de integração, onde montamos um website pra uma doceria </Text>
     </View>
   );
 }

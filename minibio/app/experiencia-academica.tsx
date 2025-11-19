@@ -6,9 +6,7 @@ export default function ExperienciaAcademica() {
       <Text style={{ fontSize: 22, fontWeight: "bold" }}>
         Experiência Acadêmica
       </Text>
-      <Text>• Curso X</Text>
-      <Text>• Curso Y</Text>
-      <Text>• Certificação Z</Text>
+      <Text>• Curso Prolinfo-ingles</Text>
     </View>
   );
 }

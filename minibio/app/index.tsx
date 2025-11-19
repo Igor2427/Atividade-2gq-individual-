@@ -6,7 +6,7 @@ export default function Home() {
     <View style={styles.container}>
       
       <Image 
-        source={require("../assets/images/perfil.jpg")} 
+        source={require("../assets/foto.jpg")} 
         style={styles.foto}
       />
 

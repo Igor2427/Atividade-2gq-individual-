@@ -5,9 +5,10 @@ export default function Projetos() {
     <View style={styles.container}>
       <Text style={styles.titulo}>Projetos</Text>
 
-      <Text style={styles.item}>• Projeto A</Text>
-      <Text style={styles.item}>• Projeto B</Text>
-      <Text style={styles.item}>• Projeto C</Text>
+      <Text style={styles.item}>• Projeto: Bela Doceria</Text>
+      <Text style={styles.item}>• Projeto: HEM</Text>
+      <Text style={styles.item}>• Projeto: werbsite digimon(em andamento)</Text>
+      <Text style={styles.item}>• Projeto: FIlmeFlix</Text>
     </View>
   );
 }
