@@ -1,15 +1,19 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 
 export default function Projetos() {
   return (
-    <View style={{ padding: 20 }}>
-      <Text style={{ fontSize: 22, fontWeight: "bold" }}>
-        Projetos
-      </Text>
+    <View style={styles.container}>
+      <Text style={styles.titulo}>Projetos</Text>
 
-      <Text>• Projeto A</Text>
-      <Text>• Projeto B</Text>
-      <Text>• Projeto C</Text>
+      <Text style={styles.item}>• Projeto A</Text>
+      <Text style={styles.item}>• Projeto B</Text>
+      <Text style={styles.item}>• Projeto C</Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { padding: 20 },
+  titulo: { fontSize: 22, fontWeight: "bold", marginBottom: 15 },
+  item: { fontSize: 16, marginBottom: 6 },
+});

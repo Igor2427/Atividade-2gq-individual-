@@ -1,20 +1,29 @@
-import { View, Text, ScrollView } from "react-native";
+import { ScrollView, Text, StyleSheet } from "react-native";
 
 export default function Sobre() {
   return (
-    <ScrollView style={{ padding: 20 }}>
-      <Text style={{ fontSize: 22, fontWeight: "bold" }}>
-        Sobre o App
+    <ScrollView style={styles.container}>
+      <Text style={styles.titulo}>Sobre Mim</Text>
+
+      <Text style={styles.texto}>
+        (Aqui vai exatamente o texto que você tinha antes)
       </Text>
 
-      <Text style={{ marginTop: 10 }}>
-        Tecnologias utilizadas:
-      </Text>
+      <Text style={styles.titulo2}>Tecnologias Utilizadas</Text>
 
-      <Text>• Expo</Text>
-      <Text>• React Native</Text>
-      <Text>• Expo Router</Text>
-      <Text>• TypeScript</Text>
+      <Text style={styles.item}>• React Native</Text>
+      <Text style={styles.item}>• Expo</Text>
+      <Text style={styles.item}>• TypeScript</Text>
+      <Text style={styles.item}>• Expo Router</Text>
+      <Text style={styles.item}>• Outras que você já tinha listado</Text>
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { padding: 20 },
+  titulo: { fontSize: 24, fontWeight: "bold", marginBottom: 10 },
+  titulo2: { fontSize: 22, fontWeight: "bold", marginTop: 20, marginBottom: 10 },
+  texto: { fontSize: 16, lineHeight: 22, marginBottom: 20 },
+  item: { fontSize: 16, marginVertical: 4 },
+});
