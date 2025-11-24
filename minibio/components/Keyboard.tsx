@@ -2,23 +2,30 @@ import React from "react";
 import { View, Text, Pressable, StyleSheet } from "react-native";
 
 interface Props {
-  guessed: string[];
+  guessed: string[];   // letras corretas
+  wrong: string[];     // letras erradas
   onPress: (letter: string) => void;
 }
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-export default function Keyboard({ guessed, onPress }: Props) {
+export default function Keyboard({ guessed, wrong, onPress }: Props) {
   return (
     <View style={styles.container}>
       {letters.map((letter) => {
-        const used = guessed.includes(letter);
+        const isCorrect = guessed.includes(letter);
+        const isWrong = wrong.includes(letter);
+
+        let keyStyle = styles.key;
+        if (isCorrect) keyStyle = styles.keyCorrect;
+        else if (isWrong) keyStyle = styles.keyWrong;
+
         return (
           <Pressable
             key={letter}
-            style={[styles.key, used && styles.keyUsed]}
+            style={keyStyle}
             onPress={() => onPress(letter)}
-            disabled={used}
+            disabled={isCorrect || isWrong}
           >
             <Text style={styles.keyText}>{letter}</Text>
           </Pressable>
@@ -42,8 +49,19 @@ const styles = StyleSheet.create({
     margin: 4,
     borderRadius: 8,
   },
-  keyUsed: {
-    backgroundColor: "#2a2850",
+  keyCorrect: {
+    backgroundColor: "green",
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    margin: 4,
+    borderRadius: 8,
+  },
+  keyWrong: {
+    backgroundColor: "red",
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    margin: 4,
+    borderRadius: 8,
   },
   keyText: {
     color: "white",

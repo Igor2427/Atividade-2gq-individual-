@@ -24,8 +24,9 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   letter: {
-    color: "white",
+    color: "black",  // ⬅⬅⬅ alterado para preto
     fontSize: 28,
     marginHorizontal: 4,
+    fontWeight: "bold",
   },
 });

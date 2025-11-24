@@ -1,41 +1,37 @@
-import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
-import { Link } from "expo-router";
+import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { useRouter } from "expo-router";
 
-export default function Home() {
+export default function Index() {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
-      
-      <Image 
-        source={require("../assets/foto.jpg")} 
+      <Image
+        source={require("../assets/foto.jpg")}
         style={styles.foto}
       />
 
       <Text style={styles.nome}>Igor Gabriel</Text>
 
-      <Link href="/sobre" asChild>
-        <TouchableOpacity style={styles.botao}>
-          <Text style={styles.botaoTexto}>Sobre</Text>
-        </TouchableOpacity>
-      </Link>
+      <TouchableOpacity style={styles.botao} onPress={() => router.push("/sobre")}>
+        <Text style={styles.textoBotao}>Sobre</Text>
+      </TouchableOpacity>
 
-      <Link href="/experiencia-profissional" asChild>
-        <TouchableOpacity style={styles.botao}>
-          <Text style={styles.botaoTexto}>Experiência Profissional</Text>
-        </TouchableOpacity>
-      </Link>
+      <TouchableOpacity style={styles.botao} onPress={() => router.push("/experiencia-profissional")}>
+        <Text style={styles.textoBotao}>Experiência Profissional</Text>
+      </TouchableOpacity>
 
-      <Link href="/projetos" asChild>
-        <TouchableOpacity style={styles.botao}>
-          <Text style={styles.botaoTexto}>Projetos</Text>
-        </TouchableOpacity>
-      </Link>
+      <TouchableOpacity style={styles.botao} onPress={() => router.push("/experiencia-academica")}>
+        <Text style={styles.textoBotao}>Experiência Acadêmica</Text>
+      </TouchableOpacity>
 
-      <Link href="/jogo" asChild>
-        <TouchableOpacity style={styles.botao}>
-          <Text style={styles.botaoTexto}>Jogo da Forca</Text>
-        </TouchableOpacity>
-      </Link>
+      <TouchableOpacity style={styles.botao} onPress={() => router.push("/projetos")}>
+        <Text style={styles.textoBotao}>Projetos</Text>
+      </TouchableOpacity>
 
+      <TouchableOpacity style={styles.botao} onPress={() => router.push("/jogo")}>
+        <Text style={styles.textoBotao}>Jogo da Forca</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -44,29 +40,30 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    paddingTop: 60,
+    justifyContent: "center",
+    padding: 20,
   },
   foto: {
-    width: 140,
-    height: 140,
-    borderRadius: 100,
+    width: 150,
+    height: 150,
+    borderRadius: 75,
     marginBottom: 20,
   },
   nome: {
-    fontSize: 26,
+    fontSize: 28,
     fontWeight: "bold",
     marginBottom: 30,
   },
   botao: {
-    backgroundColor: "#1a1a1a",
-    padding: 12,
-    width: 250,
+    backgroundColor: "#333",
+    padding: 15,
     borderRadius: 10,
-    marginBottom: 12,
+    width: "80%",
+    marginVertical: 10,
   },
-  botaoTexto: {
+  textoBotao: {
+    color: "white",
     fontSize: 18,
     textAlign: "center",
-    color: "#fff",
   },
 });
